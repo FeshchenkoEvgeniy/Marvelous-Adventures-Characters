@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Marvelous-Adventures-Characters/",
+    "build": "vite build --base=/Marvelous-Adventures-Characters/home.html",
     "preview": "vite preview"
   },
   "devDependencies": {
