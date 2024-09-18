@@ -1,0 +1,39 @@
+ .hero__img--block{
+    /* position: relative; */
+    width: 190px;
+    height: 256px;
+    background-color: #34387F;
+    border-radius: 4px;
+    background-image: url('../../img/Frame\ 64.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+ }
+.hero__img--block::after{
+    content: '';
+    position: absolute;
+    background-image: url('../../img/IMG_9146\ 1.png');
+    width: 190px;
+    height: 256px;
+}
+
+/* Загальний стиль для пагінаційних точок */
+.swiper-pagination-bullet {
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    opacity: 0.3;
+    margin: 0 5px;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Стиль для активної пагінаційної точки */
+.swiper-pagination-bullet-active {
+    background-color: #3a3bff;
+    /* синій колір для активної точки */
+    opacity: 1;
+}
+.swiper-img{
+    width: 190px;
+    height: 256px;
+}

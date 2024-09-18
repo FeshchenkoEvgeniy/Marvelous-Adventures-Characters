@@ -1,0 +1,8 @@
+:root {
+    --mainFirstTextColor: #FAFAFA;;
+    --mainSecondTextColor: rgba(255, 255, 255, 0.7);
+    --mainBg: #000000;
+    --secondBgColor: #171717;
+    --mainTransition: cubic-bezier(0.4, 0, 0.2, 1);
+    --mainTransitionTime: 250ms;
+}
