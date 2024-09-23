@@ -4,7 +4,10 @@
 /* components style */
 @import './components/header.css';
 @import './components/home-header.css';
+@import './components/home-header_spiderman.css';
+@import './components/home-header-hulk.css';
+@import './components/hero-header-blackpanther.css';
 
 /* utils style */
-@import url('./utils/nullstyles.css');
 @import url('./utils/variable.css');
+@import url('./utils/nullstyles.css');
