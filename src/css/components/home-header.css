@@ -292,7 +292,7 @@ screen and (min-width: 768px) and (min-resolution: 2dppx) {
     .hero__container {
         display: flex;
     }
-        .characters__wrapper{
+    .characters__wrapper{
         flex-wrap: nowrap;
     }
     .characters__box{
@@ -325,9 +325,6 @@ screen and (min-width: 768px) and (min-resolution: 2dppx) {
         width: 100%;
         height: 780px;
         max-height: 100vh;
-        position: relative;
-        overflow: visible;
-        padding: 0px 50px;
     }
     .swiper-pagination{
         position: absolute;
