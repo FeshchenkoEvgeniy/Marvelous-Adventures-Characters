@@ -1,39 +1,354 @@
- .hero__img--block{
-    /* position: relative; */
+ .hero{
+    margin-top: 44px;
+ }
+ .hero__caption{
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+ }
+ .hero__title{
+    margin: 14px 0px 16px;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+ }
+ .hero__text{
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(250, 250, 250, 1);
+ }
+ .hero__btn{
+    display: inline-block;
+    width: 142px;
+    height: 36px;
+    margin: 20px 0 40px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    background-color: rgba(52, 56, 127, 1);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: var(--mainFirstTextColor);
+ }
+ .blackPanther-first{
+    position: relative;
     width: 190px;
     height: 256px;
     background-color: #34387F;
     border-radius: 4px;
-    background-image: url('../../img/test1.png');
+    background-image: url('../../img/mobile/home-hero-elipse-mobile@1x.png');
     background-repeat: no-repeat;
-    background-position: bottom right;
- }
-.hero__img--block::after{
+    background-position: right bottom;
+    margin-bottom: 20px;
+}
+
+.blackPanther-first::after {
     content: '';
     position: absolute;
-    background-image: url('../../img/test2.png');
+    background-image: url('../../img/mobile/home-hero-blackpanther-mobile@1x.png');
+    background-size: contain;
     width: 190px;
     height: 256px;
 }
 
-/* Загальний стиль для пагінаційних точок */
+.blackPanther-second{
+    position: relative;
+    width: 190px;
+    height: 256px;
+    border-radius: 4px;
+    background-color: #171717;;
+    background-image: url('../../img/mobile/home-hero-line-mobile@1x.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow: rgba(52,56,127,0.5) 0px 60px 50px -13px;
+    margin-left: 135px;
+}
+.blackPanther-second::after {
+    content: '';
+    position: absolute;
+    background-image: url('../../img/mobile/home-hero-blackpanther2-mobile@1x.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 190px;
+    height: 256px;
+}
+.blackPanther-name{
+    content: '';
+    position: absolute;
+    top: 162px;
+    left: 14px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 50%;
+    background: radial-gradient(81.15% 81.15% at 50% 18.85%, #34387F 0%, #171717 100%);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+.characters__box{
+    display: flex;
+    position: relative;
+    margin: 30px 0px 0px 135px;
+    width: 190px;
+    height: 142px;
+}
+.characters__box::after{
+    content: '';
+    position: absolute;
+    width: 190px;
+    height: 2px;
+    top: -16px;
+    background-color: rgba(250, 250, 250, 0.15);
+}
+.characters__pre-title{
+    margin-right: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    z-index: 1;
+}
+.characters__description{
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    color: rgba(250, 250, 250, 0.5);
+    z-index: 1;
+}
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
 .swiper-pagination-bullet {
     display: inline-block;
-    width: 40px;
-    height: 5px;
-    background-color: white;
-    opacity: 0.3;
-    margin: 0 5px;
+    width: 72px;
+    height: 4px;
+    background-color: rgba(23, 23, 23, 0.8);
+    margin: 0 14px;
     transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
-/* Стиль для активної пагінаційної точки */
 .swiper-pagination-bullet-active {
-    background-color: #3a3bff;
-    /* синій колір для активної точки */
-    opacity: 1;
+    background: rgba(52, 56, 127, 1);
 }
-.swiper-img{
-    width: 190px;
-    height: 256px;
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+    .blackPanther-first {
+        background-image: url('../../img/mobile/home-hero-elipse-mobile@2x.png');
+        background-size: contain;
+    }
+    .blackPanther-second{
+        background-image: url('../../img/mobile/home-hero-line-mobile@2x.png');
+        background-size: contain;
+    }
+    .blackPanther-first::after {
+        background-image: url('../../img/mobile/home-hero-blackpanther-mobile@2x.png');
+    }
+    .blackPanther-second::after{
+        background-image: url('../../img/mobile/home-hero-blackpanther2-mobile@2x.png');
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .characters__wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .blackPanther-first{
+    background-image: url('../../img/tablet/home-hero-elipse-tablet@1x.png');
+    background-position: right 10%;
+    width: 336px;
+    height: 540px;
+    margin: 111px 0px 0px;
+    }
+    .blackPanther-second{
+    background-image: url('../../img/tablet/home-hero-line-tablet@1x.png');
+    background-position-y: 70%;
+    width: 336px;
+    height: 540px;
+    margin-left: 32px;
+    }
+    .blackPanther-first::after {
+    background-image: url('../../img/tablet/home-hero-blackpnather-tablet@1x.png');
+    width: 336px;
+    height: 540px;
+}
+    .blackPanther-second::after {
+    background-image: url('../../img/tablet/home-hero-blackpnather2-tablet@1x.png');
+    width: 261px;
+    height: 417px;
+    top: 123px;
+    left: 95px;
+} 
+.blackPanther-name{
+    width: 144px;
+    height: 144px;
+    top: 380px;
+    left: 16px;
+    font-size: 24px;
+    line-height: 24px;
+    padding-left: 20px;
+}
+.characters__box{
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    width: 336px;
+    height: 72px;
+    margin: 32px auto 0 ;
+}
+.characters__box::after{
+    width: 336px;
+    top: -18px;
+}
+.characters__pre-title{
+    margin-right: 52px;
+}
+.hero {
+    margin-top: 80px;
+}
+.hero__caption{
+    font-size: 18px;
+    line-height: 28.8px;
+}
+.hero__title{
+    margin: 16px 0;
+    font-size: 80px;
+    line-height: 80px;
+}
+.hero__text{
+    width: 473px;
+    font-size: 16px;
+    line-height: 18px;
+}
+.hero__btn{
+    width: 167px;    
+    height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 12px 24px;
+    margin: 32px 0px;
+}
+.swiper-pagination-bullet{
+    width: 100px;
+}
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+screen and (min-width: 768px) and (min-resolution: 192dpi),
+screen and (min-width: 768px) and (min-resolution: 2dppx) {
+    .blackPanther-first {
+        background-image: url('../../img/tablet/home-hero-elipse-tablet@2x.png');
+    }
+    .blackPanther-second{
+        background-image: url('../../img/tablet/home-hero-line-tablet@2x.png');
+        background-position-y: 60%;
+    }
+    .blackPanther-first::after {
+        background-image: url('../../img/tablet/home-hero-blackpnather-tablet@2x.png');
+    }
+    .blackPanther-second::after {
+        background-image: url('../../img/tablet/home-hero-blackpnather2-tablet@2x.png');
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .blackPanther-first {
+        background-image: url('../../img/desktop/home-hero-bg-elipse-desktop@1x.png');
+        background-size: auto;
+        width: 352px;
+    }
+    .blackPanther-second{
+        background-image: url('../../img/desktop/home-hero-bg-line_desktop@1x.png');
+        width: 352px;
+    }
+    .blackPanther-first::after {
+        background-image: url('../../img/desktop/home-hero-blackpanther-desktop@1x.png');
+        width: 352px;
+    }
+    .blackPanther-second::after{
+        background-image: url('../../img/desktop/home-hero-blackpanther2-desktop@1x.png');
+    }
+    .hero__container {
+        display: flex;
+    }
+        .characters__wrapper{
+        flex-wrap: nowrap;
+    }
+    .characters__box{
+        width: 320px;
+        height: 86px;
+        top: 540px;
+        margin: 32px 32px 0px 0px;
+    }
+    .characters__box::after{
+        width: 320px;
+    }
+    .characters__pre-title{
+        margin-right: 59px;
+    }
+    .characters__description{
+        width: 195px;
+    }
+    .hero__container{
+        max-height: 780px;
+    }
+    .hero__box{
+        margin-top: 60px;
+        width: 540px;
+        margin-right: auto;
+    }
+    .blackPanther-first{
+        margin-top: 210px;
+    }
+    .swiper {
+        width: 100%;
+        height: 780px;
+        max-height: 100vh;
+    }
+    .swiper-pagination{
+        position: absolute;
+        top: 300px;
+        margin-top: 200px;
+        left: -220px;
+        z-index: 4;
+        transform: rotate(90deg);
+    }
+    .characters__container{
+        /* position: relative; */
+        margin-top: -160px;
+    }
+}
+
+@media screen and (min-width:1440px) and (min-device-pixel-ratio: 2),
+screen and (min-width: 1440px) and (min-resolution: 192dpi),
+screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+    .blackPanther-first {
+        background-image: url('../../img/desktop/home-hero-elipse-desktop@2x.png');
+        background-size: contain;
+        width: 352px;
+    }
+    .blackPanther-second {
+        background-image: url('../../img/desktop/home-hero-line-desktop@2x.png');
+    }
+    .blackPanther-first::after {
+        background-image: url('../../img/desktop/home-hero-blackpnather-desktop@2x.png');
+    }
+    .blackPanther-second::after {
+        background-image: url('../../img/desktop/home-hero-blackpnather2-desktop@2x.png');
+    }
 }
