@@ -45,7 +45,6 @@ const swiper = new Swiper('.swiper', {
           }
           break;
       }
-      console.log('Слайд змінився на: ', this.activeIndex);
     },
   }
 });
