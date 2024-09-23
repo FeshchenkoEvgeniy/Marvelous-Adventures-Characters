@@ -33,67 +33,7 @@
     text-transform: uppercase;
     color: var(--mainFirstTextColor);
  }
- .blackPanther-first{
-    position: relative;
-    width: 190px;
-    height: 256px;
-    background-color: #34387F;
-    border-radius: 4px;
-    background-image: url('../../img/mobile/home-hero-elipse-mobile@1x.png');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    margin-bottom: 20px;
-}
-
-.blackPanther-first::after {
-    content: '';
-    position: absolute;
-    background-image: url('../../img/mobile/home-hero-blackpanther-mobile@1x.png');
-    background-size: contain;
-    width: 190px;
-    height: 256px;
-}
-
-.blackPanther-second{
-    position: relative;
-    width: 190px;
-    height: 256px;
-    border-radius: 4px;
-    background-color: #171717;;
-    background-image: url('../../img/mobile/home-hero-line-mobile@1x.png');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    box-shadow: rgba(52,56,127,0.5) 0px 60px 50px -13px;
-    margin-left: 135px;
-}
-.blackPanther-second::after {
-    content: '';
-    position: absolute;
-    background-image: url('../../img/mobile/home-hero-blackpanther2-mobile@1x.png');
-    background-position: right;
-    background-repeat: no-repeat;
-    width: 190px;
-    height: 256px;
-}
-.blackPanther-name{
-    content: '';
-    position: absolute;
-    top: 162px;
-    left: 14px;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 15px;
-    border-radius: 50%;
-    background: radial-gradient(81.15% 81.15% at 50% 18.85%, #34387F 0%, #171717 100%);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 14px;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-}
+ 
 .characters__box{
     display: flex;
     position: relative;
@@ -148,66 +88,13 @@
 .swiper-pagination-bullet-active--green {
     background: rgba(91, 127, 60, 1);
 }
-@media screen and (min-device-pixel-ratio: 2),
-screen and (min-resolution: 192dpi),
-screen and (min-resolution: 2dppx) {
-    .blackPanther-first {
-        background-image: url('../../img/mobile/home-hero-elipse-mobile@2x.png');
-        background-size: contain;
-    }
-    .blackPanther-second{
-        background-image: url('../../img/mobile/home-hero-line-mobile@2x.png');
-        background-size: contain;
-    }
-    .blackPanther-first::after {
-        background-image: url('../../img/mobile/home-hero-blackpanther-mobile@2x.png');
-    }
-    .blackPanther-second::after{
-        background-image: url('../../img/mobile/home-hero-blackpanther2-mobile@2x.png');
-        background-size: contain;
-    }
-}
 
 @media screen and (min-width: 768px) {
     .characters__wrapper{
         display: flex;
         flex-wrap: wrap;
     }
-    .blackPanther-first{
-    background-image: url('../../img/tablet/home-hero-elipse-tablet@1x.png');
-    background-position: right 10%;
-    width: 336px;
-    height: 540px;
-    margin: 111px 0px 0px;
-    }
-    .blackPanther-second{
-    background-image: url('../../img/tablet/home-hero-line-tablet@1x.png');
-    background-position-y: 70%;
-    width: 336px;
-    height: 540px;
-    margin-left: 32px;
-    }
-    .blackPanther-first::after {
-    background-image: url('../../img/tablet/home-hero-blackpnather-tablet@1x.png');
-    width: 336px;
-    height: 540px;
-}
-    .blackPanther-second::after {
-    background-image: url('../../img/tablet/home-hero-blackpnather2-tablet@1x.png');
-    width: 261px;
-    height: 417px;
-    top: 123px;
-    left: 95px;
-} 
-.blackPanther-name{
-    width: 144px;
-    height: 144px;
-    top: 380px;
-    left: 16px;
-    font-size: 24px;
-    line-height: 24px;
-    padding-left: 20px;
-}
+   
 .characters__box{
     position: absolute;
     right: 0;
@@ -254,41 +141,8 @@ screen and (min-resolution: 2dppx) {
 }
 }
 
-@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-screen and (min-width: 768px) and (min-resolution: 192dpi),
-screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    .blackPanther-first {
-        background-image: url('../../img/tablet/home-hero-elipse-tablet@2x.png');
-    }
-    .blackPanther-second{
-        background-image: url('../../img/tablet/home-hero-line-tablet@2x.png');
-        background-position-y: 60%;
-    }
-    .blackPanther-first::after {
-        background-image: url('../../img/tablet/home-hero-blackpnather-tablet@2x.png');
-    }
-    .blackPanther-second::after {
-        background-image: url('../../img/tablet/home-hero-blackpnather2-tablet@2x.png');
-    }
-}
 
 @media screen and (min-width: 1440px) {
-    .blackPanther-first {
-        background-image: url('../../img/desktop/home-hero-bg-elipse-desktop@1x.png');
-        background-size: auto;
-        width: 352px;
-    }
-    .blackPanther-second{
-        background-image: url('../../img/desktop/home-hero-bg-line_desktop@1x.png');
-        width: 352px;
-    }
-    .blackPanther-first::after {
-        background-image: url('../../img/desktop/home-hero-blackpanther-desktop@1x.png');
-        width: 352px;
-    }
-    .blackPanther-second::after{
-        background-image: url('../../img/desktop/home-hero-blackpanther2-desktop@1x.png');
-    }
     .hero__container {
         display: flex;
     }
@@ -318,9 +172,6 @@ screen and (min-width: 768px) and (min-resolution: 2dppx) {
         width: 538px;
         margin-right: auto;
     }
-    .blackPanther-first{
-        margin-top: 210px;
-    }
     .swiper {
         width: 100%;
         height: 780px;
@@ -346,21 +197,4 @@ screen and (min-width: 768px) and (min-resolution: 2dppx) {
     }
 }
 
-@media screen and (min-width:1440px) and (min-device-pixel-ratio: 2),
-screen and (min-width: 1440px) and (min-resolution: 192dpi),
-screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    .blackPanther-first {
-        background-image: url('../../img/desktop/home-hero-elipse-desktop@2x.png');
-        background-size: contain;
-        width: 352px;
-    }
-    .blackPanther-second {
-        background-image: url('../../img/desktop/home-hero-line-desktop@2x.png');
-    }
-    .blackPanther-first::after {
-        background-image: url('../../img/desktop/home-hero-blackpnather-desktop@2x.png');
-    }
-    .blackPanther-second::after {
-        background-image: url('../../img/desktop/home-hero-blackpnather2-desktop@2x.png');
-    }
-}
+
