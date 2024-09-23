@@ -28,7 +28,6 @@ const swiper = new Swiper('.swiper', {
       });
 
       const swiperActiveBullet = document.querySelector('.swiper-pagination-bullet-active') as HTMLElement;
-      console.log(swiperActiveBullet)
       switch (this.activeIndex) {
         case 0:
           heroBtn.style.backgroundColor = 'rgba(52, 56, 127, 1)';
