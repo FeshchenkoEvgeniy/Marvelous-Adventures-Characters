@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/md5": "^2.3.5",
     "glob": "^11.0.0",
     "postcss": "^8.4.41",
     "postcss-sort-media-queries": "^5.2.0",
@@ -17,6 +18,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "md5": "^2.3.0",
     "swiper": "^11.1.14",
     "typescript": "^5.6.2",
     "vite-plugin-full-reload": "^1.2.0",
