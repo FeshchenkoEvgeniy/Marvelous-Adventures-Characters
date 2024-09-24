@@ -1,0 +1,116 @@
+.page-footer__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 120px 0px 40px;
+}
+.page-footer__link{
+    margin-right: 158px;
+}
+.page-footer__logo{
+    width: 98px;
+    height: 15px;
+}
+.page-footer__characters{
+    color: var(--mainFirstTextColor);
+    font-size: 14px;
+    line-height: 18px;
+    transition: color var(--mainTransitionTime) var(--mainTransition);
+}
+.page-footer__characters:hover,
+.page-footer__characters:active{
+    color: #4B50AD;;
+}
+.social-list{
+    display: flex;
+    margin-top: 20px;
+    margin-right: -14px;
+}
+.social-list__item{
+    margin-right: 14px;
+    width: 32px;
+    height: 32px;
+}
+.social-list__link{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(250, 250, 250, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FAFAFA;
+    transition: border var(--mainTransitionTime) var(--mainTransition),
+    color var(--mainTransitionTime) var(--mainTransition);
+}
+.social-list__link:hover,
+.social-list:active{
+    border: 1px solid #4B50AD;
+    color: #4B50AD;
+}
+.social-list__icon{
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+.copyright{
+    padding: 16px 62.5px;
+    background-color: #34387F;
+}
+.copyright__text{
+    width: 210px;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+    color: rgba(250, 250, 250, 0.4);
+}
+@media screen and (min-width: 768px) {
+.page-footer__wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 192px 0px 64px;
+}
+.page-footer__logo {
+    width: 202px;
+    height: 31px;
+}
+.page-footer__link{
+    margin-right: 0;
+}
+.social-list{
+    margin-top: 0;
+    margin-right: -16px;
+}
+.social-list__item {
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+}
+.social-list__icon{
+    width: 18px;
+    height: 18px;
+}
+.page-footer__characters{
+    font-size: 16px;
+}
+.copyright {
+    padding: 18px 205px;
+}
+.copyright__text {
+    width: 294px;
+    font-size: 14px;
+    line-height: 18px;
+}
+}
+
+
+@media screen and (min-width: 1440px) {
+    .page-footer__wrapper {
+    margin: 192px 32px 64px;
+    }
+    .copyright {
+    padding: 18px 541px;
+}
+}
