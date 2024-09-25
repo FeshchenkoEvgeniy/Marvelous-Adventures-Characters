@@ -20,4 +20,4 @@ const fetchFiveRandomCharacters = async () => {
     return randomCharacters
 };
 
-fetchFiveRandomCharacters().then(data=>console.log(data)).catch(err => console.log(err));
+export {fetchFiveRandomCharacters}
