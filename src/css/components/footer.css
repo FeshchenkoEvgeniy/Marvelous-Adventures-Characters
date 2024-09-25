@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 120px 0px 40px;
+    margin: 0px 0px 40px;
 }
 .page-footer__link{
     margin-right: 158px;
@@ -70,7 +70,7 @@
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
-        margin: 192px 0px 64px;
+        margin: 0px 0px 64px;
 }
 .page-footer__logo {
     width: 202px;
@@ -108,7 +108,7 @@
 
 @media screen and (min-width: 1440px) {
     .page-footer__wrapper {
-    margin: 192px 32px 64px;
+    margin: 0px 32px 64px;
     }
     .copyright {
     padding: 18px 541px;
