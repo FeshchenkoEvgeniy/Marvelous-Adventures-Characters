@@ -1,10 +1,10 @@
 import Swiper from 'swiper';
 import 'swiper/css';
-import {Pagination} from 'swiper/modules';
+import {Pagination, Autoplay } from 'swiper/modules';
 
 const heroBtn = document.querySelector('.js-hero__btn') as HTMLElement
 
-const swiper = new Swiper('.swiper', {
+const heroSwiper = new Swiper('.hero__swiper', {
   modules: [Pagination],
   slidesPerView: 1,
   direction: 'horizontal',
@@ -45,6 +45,47 @@ const swiper = new Swiper('.swiper', {
           }
           break;
       }
+    },
+  }
+});
+
+
+const randomCharactersSwiper = new Swiper(".random-characters__swiper", {
+  modules: [Autoplay],
+      centeredSlides: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+  },
+  breakpoints: {
+    1440: {
+      slidesPerView: 1,
+      direction: 'vertical',
+    }
+  },
+  on: {
+    slideChange: function () {
+      const randomCharactersName = document.querySelectorAll('.random-characters__name');
+      const randomCharactersDescription = document.querySelectorAll('.random-characters__description');
+
+      randomCharactersName.forEach((name) => {
+        name.classList.remove('random-characters__text--active');
+      });
+
+      randomCharactersDescription.forEach((name) => {
+        name.classList.remove('random-characters__text--active');
+      });
+
+    const activeName = randomCharactersName[this.activeIndex];
+    const activeDescription = randomCharactersDescription[this.activeIndex];
+   
+    if (activeName) {
+      activeName.classList.add('random-characters__text--active');
+    }
+
+    if (activeDescription) {
+      activeDescription.classList.add('random-characters__text--active');
+    }
     },
   }
 });
