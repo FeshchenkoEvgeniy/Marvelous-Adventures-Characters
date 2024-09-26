@@ -1,7 +1,8 @@
 import { fetchFiveRandomCharacters } from "./api";
+import { showLoader, hideLoader } from "./loader";
 
-const swiperWrapper = document.querySelector('.random-characters__swiper-box') as HTMLElement
-const randomCharactersList = document.querySelector('.random-characters__list') as HTMLElement
+const swiperWrapper = document.querySelector('.js-random-characters__swiper-box') as HTMLElement
+const randomCharactersList = document.querySelector('.js-random-characters__list') as HTMLElement
 
 interface IThumbnail{
     extension: string,
@@ -15,12 +16,18 @@ interface ICharacters {
     thumbnail: IThumbnail,
 }
 
+showLoader()
 fetchFiveRandomCharacters()
     .then((randomCharacters) => {
         swiperWrapper.innerHTML = createMarkupForSwiperWrapper(randomCharacters)
         randomCharactersList.innerHTML = createMarkupForRandomCharacters(randomCharacters)
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+        console.log(err)
+    })
+    .finally(() => {
+        hideLoader()
+    })
 
 function createMarkupForSwiperWrapper(arr: ICharacters[]) {
     return arr.map(({name, thumbnail:{extension,path}}: ICharacters) => {
