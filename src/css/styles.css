@@ -13,3 +13,4 @@
 /* utils style */
 @import url('./utils/variable.css');
 @import url('./utils/nullstyles.css');
+@import url('./utils/loader.css');
