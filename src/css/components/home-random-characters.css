@@ -10,6 +10,9 @@
     line-height: 32px;
     letter-spacing: -0.02em;
 }
+.random-characters__wrapper {
+    position: relative;
+}
 .random-characters__img{
     width: 335px;
     height: 335px;
