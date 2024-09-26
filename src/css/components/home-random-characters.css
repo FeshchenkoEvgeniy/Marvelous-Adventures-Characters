@@ -113,8 +113,7 @@
 }
 .random-characters__swiper {
     min-width: 496px;
-    height: 704px;
-    max-height: 100vh;
+    max-height: 704px;
     margin: 64px 0px 0px;
 }
 .random-characters__img{

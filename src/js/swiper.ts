@@ -49,7 +49,6 @@ const heroSwiper = new Swiper('.hero__swiper', {
   }
 });
 
-
 const randomCharactersSwiper = new Swiper(".random-characters__swiper", {
   modules: [Autoplay],
       centeredSlides: true,
@@ -59,7 +58,6 @@ const randomCharactersSwiper = new Swiper(".random-characters__swiper", {
   },
   breakpoints: {
     1440: {
-      slidesPerView: 1,
       direction: 'vertical',
     }
   },
