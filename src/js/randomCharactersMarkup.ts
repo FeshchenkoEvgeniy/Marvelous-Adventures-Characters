@@ -40,10 +40,11 @@ function createMarkupForSwiperWrapper(arr: ICharacters[]) {
 const str: string = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero praesentium doloremque quos voluptatem voluptates ipsa recusandae fugit officia. Sequi, cupiditate ut. Error placeat reprehenderit laudantium quibusdam voluptates,laboriosam ipsum!'
 
 function createMarkupForRandomCharacters(arr: ICharacters[]) {
-    return arr.map(({name, description, resourceURI}: ICharacters) => {
+    return arr.map(({ name, description, resourceURI }: ICharacters) => {
+        console.log(description.length)
         return `<li class="random-characters__item" data-url='${resourceURI}'>
         <p class='random-characters__name'>${name}</p>        
-        <p class="random-characters__description">${description.length ? description : str}</p>
+        <p class="random-characters__description">${!description.trim().length || description.includes('&nbsp;') ? str : description}</p>
         </li>`
     }).join('')
 }
