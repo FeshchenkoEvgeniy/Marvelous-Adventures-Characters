@@ -41,7 +41,6 @@ const str: string = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cu
 
 function createMarkupForRandomCharacters(arr: ICharacters[]) {
     return arr.map(({ name, description, resourceURI }: ICharacters) => {
-        console.log(description.length)
         return `<li class="random-characters__item" data-url='${resourceURI}'>
         <p class='random-characters__name'>${name}</p>        
         <p class="random-characters__description">${!description.trim().length || description.includes('&nbsp;') ? str : description}</p>
