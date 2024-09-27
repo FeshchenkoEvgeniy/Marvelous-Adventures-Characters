@@ -1,0 +1,16 @@
+/* Common styles */
+@import url('./common/container.css');
+
+/* components style */
+@import './components/header.css';
+@import './components/home-hero.css';
+@import './components/home-hero_spiderman.css';
+@import './components/home-hero-hulk.css';
+@import './components/home-hero-blackpanther.css';
+@import './components/home-random-characters.css';
+@import './components/footer.css';
+
+/* utils style */
+@import url('./utils/variable.css');
+@import url('./utils/nullstyles.css');
+@import url('./utils/loader.css');

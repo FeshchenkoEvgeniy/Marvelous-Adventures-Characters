@@ -1,0 +1,12 @@
+/* Common styles */
+@import url('./common/container.css');
+
+/* components style */
+@import './components/header.css';
+@import './components/main-hero.css';
+@import './components/footer.css';
+
+/* utils style */
+@import url('./utils/variable.css');
+@import url('./utils/nullstyles.css');
+@import url('./utils/loader.css');
