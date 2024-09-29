@@ -4,6 +4,7 @@
 /* components style */
 @import './components/header.css';
 @import './components/main-hero.css';
+@import './components/main-characters.css';
 @import './components/footer.css';
 
 /* utils style */
