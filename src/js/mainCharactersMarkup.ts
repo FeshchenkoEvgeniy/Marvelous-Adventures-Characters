@@ -4,7 +4,9 @@ import { ICharacters, IinitialState } from './interface'
 import { getCategory } from "./mainCharactersGetCategory";
 
 const charactersList = document.querySelector('.js-characters-list') as HTMLElement;
-const loadMoreBtn = document.querySelector('.main-characters__btn') as HTMLElement;
+const loadMoreBtn = document.querySelector('.js-main-character__btn') as HTMLElement;
+const loader = document.querySelector('.js-loader') as HTMLElement;
+const body = document.querySelector('body') as HTMLElement
 
 const { limit, offset, requiredCharacters, currentCategory } = getCategory();
 
@@ -14,12 +16,14 @@ const initialState: IinitialState = {
     requiredCharacters,
     currentCategory,
 }
+let setLoading = true;
 
     window.addEventListener('resize', debounce(1000, handleResize));
     loadMoreBtn.addEventListener('click', loadMoreCharacters);
     
     filterValidateCharacters();
     
+
 function handleResize() {
     const newCategory = getCategory();
 
@@ -35,8 +39,23 @@ function handleResize() {
     }
 }
 
+function showLoader() {
+    if (setLoading) {
+        loader.style.display = 'block';
+        body.style.pointerEvents = 'none'    
+    } else {
+        loader.style.display = 'none';
+        body.style.pointerEvents = 'all' 
+    }
+}
+
 async function filterValidateCharacters() {
     let validCharacters: ICharacters[] = [];
+
+    loadMoreBtn.style.display = 'none'    
+   
+    setLoading = true
+    showLoader()
 
     while (validCharacters.length < initialState.requiredCharacters) {
         try {
@@ -49,7 +68,6 @@ async function filterValidateCharacters() {
             validCharacters = [...validCharacters, ...filteredCharacters];
 
             initialState.offset += initialState.limit;
-
         } catch (err) {
             console.log("Помилка під час запиту:", err);
             break;
@@ -57,6 +75,9 @@ async function filterValidateCharacters() {
 
         if (validCharacters.length >= initialState.requiredCharacters) {
             validCharacters = validCharacters.slice(0, initialState.requiredCharacters);
+            loadMoreBtn.style.display = 'block'
+            setLoading = false
+            showLoader()
             break;
         }
     }
@@ -64,7 +85,11 @@ async function filterValidateCharacters() {
     charactersList.insertAdjacentHTML('beforeend', createMarkup(validCharacters));
 }
 
+
 function loadMoreCharacters() {
+        if (initialState.offset >= 1500) {
+            loadMoreBtn.style.display = 'none'
+        }
     filterValidateCharacters();
 }
 
