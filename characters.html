@@ -21,9 +21,9 @@
     <link rel="modulepreload" crossorigin href="/Marvelous-Adventures-Characters/assets/vendor-BQEYCykn.js">
     <link rel="modulepreload" crossorigin href="/Marvelous-Adventures-Characters/assets/api-oWQ6fUR6.js">
     <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/vendor-Be9b3THL.css">
-    <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/characters-3zK0k3BS.css">
+    <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/characters-CDxkHiOW.css">
   </head>
-  <body>
+  <body class="loader-active">
     <header class="page-header">
   <div class="container page-header__container">
     <div class="container__logo">
@@ -72,13 +72,21 @@
 
       <section class="main-characters">
   <div class="container main-characters__container">
-    <div class="main-characters__form-wrapper"></div>
     <div class="main-characters__box">
       <ul class="characters__list js-characters-list"></ul>
+      <div class="loader-container">
+        <div class="loader js-loader"></div>
+      </div>
     </div>
-    <button type="button" class="main-characters__btn">Load more</button>
+    <div class="main-character__btn-wrapper">
+      <button type="button" class="main-characters__btn js-main-character__btn">
+        Load more
+      </button>
+    </div>
   </div>
 </section>
+
+<!-- <div class="main-characters__form-wrapper"></div> -->
 
     </main>
     <footer class="page-footer">
