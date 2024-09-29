@@ -1,7 +1,8 @@
+.loader-container{
+    display: flex;
+    justify-content: center;
+}
 .loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     border: 32px solid #0000;
     border-radius: 50%;
     animation: piefill 2s linear infinite;
