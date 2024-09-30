@@ -18,7 +18,7 @@
     transition: color var(--mainTransitionTime) var(--mainTransition);
 }
 .page-footer__characters:hover,
-.page-footer__characters:active{
+.page-footer__characters:focus{
     color: #4B50AD;;
 }
 .social-list{
@@ -44,7 +44,7 @@
     color var(--mainTransitionTime) var(--mainTransition);
 }
 .social-list__link:hover,
-.social-list:active{
+.social-list:focus{
     border: 1px solid #4B50AD;
     color: #4B50AD;
 }
