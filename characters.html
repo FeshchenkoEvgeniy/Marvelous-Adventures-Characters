@@ -18,10 +18,10 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/Marvelous-Adventures-Characters/characters.js"></script>
-    <link rel="modulepreload" crossorigin href="/Marvelous-Adventures-Characters/assets/vendor-BQEYCykn.js">
-    <link rel="modulepreload" crossorigin href="/Marvelous-Adventures-Characters/assets/api-oWQ6fUR6.js">
-    <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/vendor-Be9b3THL.css">
-    <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/characters-CDxkHiOW.css">
+    <link rel="modulepreload" crossorigin href="/Marvelous-Adventures-Characters/assets/vendor-Dn3nGrsG.js">
+    <link rel="modulepreload" crossorigin href="/Marvelous-Adventures-Characters/assets/api-CEbok3hU.js">
+    <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/vendor-CTP92izN.css">
+    <link rel="stylesheet" crossorigin href="/Marvelous-Adventures-Characters/assets/characters-Cd-vfo-F.css">
   </head>
   <body class="loader-active">
     <header class="page-header">
@@ -70,6 +70,61 @@
   </div>
 </section>
 
+      <section class="main-characters-form">
+  <div class="container">
+    <div class="filter-form">
+      <form action="#" class="filter-form__box">
+        <label class="filter-form__label">
+          Comics
+          <span class="filter-form__icon-wrapper">
+            <input
+              name="comics"
+              type="text"
+              class="filter-form__input"
+              placeholder="Enter text"
+            />
+            <svg class="filter-form__search-icon">
+              <use href="/Marvelous-Adventures-Characters/assets/sprite-DVTuKpqK.svg#icon-search" />
+            </svg>
+          </span>
+        </label>
+        <label class="filter-form__label">
+          Name Starts With
+          <span class="filter-form__icon-wrapper">
+            <input
+              name="name"
+              type="text"
+              class="filter-form__input"
+              placeholder="Enter text"
+            />
+            <svg class="filter-form__search-icon">
+              <use href="/Marvelous-Adventures-Characters/assets/sprite-DVTuKpqK.svg#icon-search" />
+            </svg>
+          </span>
+        </label>
+        <div class="filter-form__datepicker-wrapper">
+          <label class="filter-form__label">
+            Order by
+            <select name="orderBy" class="filter-form__select">
+              <option value="value1">Name</option>
+              <option value="value2">Modified</option>
+            </select>
+          </label>
+          <label class="filter-form__label">
+            Date
+            <input
+              type="text"
+              id="date-picker"
+              placeholder="Select date"
+              class="filter-form__input-datepicker"
+            />
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
       <section class="main-characters">
   <div class="container main-characters__container">
     <div class="main-characters__box">
@@ -85,8 +140,6 @@
     </div>
   </div>
 </section>
-
-<!-- <div class="main-characters__form-wrapper"></div> -->
 
     </main>
     <footer class="page-footer">
