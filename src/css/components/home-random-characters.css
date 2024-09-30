@@ -70,7 +70,7 @@
                 border var(--mainTransitionTime) var(--mainTransition);
 }
 .random-characters__link:hover,
-.random-characters__link:active{
+.random-characters__link:focus{
     color: #4B50AD;
     border: 1px solid #4B50AD;;
 }
