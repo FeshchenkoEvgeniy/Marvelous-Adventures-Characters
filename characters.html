@@ -71,9 +71,10 @@
 </section>
 
       <section class="main-characters-form">
+  <div id="Notiflix"></div>
   <div class="container">
     <div class="filter-form">
-      <form action="#" class="filter-form__box">
+      <form action="#" class="filter-form__box js-filter-form">
         <label class="filter-form__label">
           Comics
           <span class="filter-form__icon-wrapper">
@@ -82,6 +83,7 @@
               type="text"
               class="filter-form__input"
               placeholder="Enter text"
+              pattern="[0-9]+"
             />
             <svg class="filter-form__search-icon">
               <use href="/Marvelous-Adventures-Characters/assets/sprite-DVTuKpqK.svg#icon-search" />
@@ -106,16 +108,17 @@
           <label class="filter-form__label">
             Order by
             <select name="orderBy" class="filter-form__select">
-              <option value="value1">Name</option>
-              <option value="value2">Modified</option>
+              <option value="Name">Name</option>
+              <option value="Modified">Modified</option>
             </select>
           </label>
           <label class="filter-form__label">
             Date
             <input
               type="text"
+              name="date"
               id="date-picker"
-              placeholder="Select date"
+              placeholder="2024-10-10"
               class="filter-form__input-datepicker"
             />
           </label>
@@ -190,5 +193,6 @@
   </div>
 </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.5/dist/notiflix-aio-3.2.5.min.js"></script>
   </body>
 </html>
