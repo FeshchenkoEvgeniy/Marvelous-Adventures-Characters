@@ -103,4 +103,3 @@ function createMarkup(arr: ICharacters[]): string {
         `;
     }).join('');
 }
-
