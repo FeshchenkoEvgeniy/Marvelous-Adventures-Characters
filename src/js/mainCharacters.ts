@@ -32,9 +32,7 @@ const filterValue: IfilterObj = {
     date: null,     
 }
 
-function handleResize(evt: Event) {
-    evt.preventDefault();
-    alert(123)
+function handleResize() {
     const newCategory = getCategory();
 
     if (newCategory.currentCategory !== initialState.currentCategory) {
