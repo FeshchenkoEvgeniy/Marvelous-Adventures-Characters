@@ -5,6 +5,7 @@ interface IThumbnail{
 
 interface ICharacters {
     name: string,
+    description: string
     resourceURI: string,
     thumbnail: IThumbnail,
 }
@@ -14,6 +15,14 @@ interface IinitialState{
     offset: number,
     requiredCharacters: number,
     currentCategory: string,
+    total: number,
 }
 
-export { ICharacters, IinitialState}
+interface IfilterObj {
+    comics: null | string,
+    name: null | string,
+    orderBy: null | string,
+    date: null | string,
+}
+
+export { ICharacters, IinitialState, IfilterObj}
