@@ -25,7 +25,8 @@
                 background-color var(--mainTransitionTime) var(--mainTransition);
     outline: none;
 }
-.filter-form__input::placeholder{
+.filter-form__input::placeholder,
+.filter-form__input-datepicker::placeholder{
     color: var(--mainFirstTextColor);
 }
 .filter-form__input:focus,
