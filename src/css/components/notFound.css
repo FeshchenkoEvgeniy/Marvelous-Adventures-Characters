@@ -1,0 +1,35 @@
+.notFound__box{
+    background-image: url('../../img/notFound.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 267px;
+    height: 152px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notFound__text{
+    width: 151px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+}
+
+@media screen and (min-width: 768px) {
+.notFound__box {
+    width: 375px;
+    height: 221px;
+    background-size: contain;
+}
+.notFound__text {
+    width: 192px;
+    font-size: 24px;
+    line-height: 28px;
+}
+}
+
