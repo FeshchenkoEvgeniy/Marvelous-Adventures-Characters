@@ -42,11 +42,9 @@ function handleResize(evt: Event) {
         initialState.limit = newCategory.limit;
         initialState.offset = 0; 
         initialState.requiredCharacters = newCategory.requiredCharacters;
+        filterValidateCharacters();
+        charactersList.innerHTML = '';
     }
-
-    charactersList.innerHTML = '';
-
-    filterValidateCharacters();
 }
 
 function showLoader(isLoading: boolean, showLoadMoreBtn: boolean) {
