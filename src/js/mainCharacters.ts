@@ -7,10 +7,6 @@ import { fetchFilteredCharacters } from "./api";
 import { getCategory } from "./mainCharactersGetCategory";
 import { createMarkupForMainCharactersList } from "./createMarkup"
 
-document.addEventListener('touchmove', function(e) {
-    e.preventDefault(); // Блокує всі події скролу
-}, { passive: false });
-
 const datePicker = document.querySelector('#date-picker') as HTMLInputElement
 const jsFilterForm = document.querySelector('.js-filter-form') as HTMLFormElement
 const charactersList = document.querySelector('.js-characters-list') as HTMLElement;
@@ -36,7 +32,9 @@ const filterValue: IfilterObj = {
     date: null,     
 }
 
-function handleResize() {
+function handleResize(evt: Event) {
+    evt.preventDefault();
+    alert(123)
     const newCategory = getCategory();
 
     if (newCategory.currentCategory !== initialState.currentCategory) {
