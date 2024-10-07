@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/basiclightbox": "^5.0.4",
     "@types/md5": "^2.3.5",
     "@types/throttle-debounce": "^5.0.2",
     "glob": "^11.0.0",
@@ -19,6 +20,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "basiclightbox": "^5.0.4",
     "flatpickr": "^4.6.13",
     "md5": "^2.3.0",
     "swiper": "^11.1.14",
