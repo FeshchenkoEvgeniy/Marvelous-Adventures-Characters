@@ -42,4 +42,23 @@ function randomCharactersId() {
     return newArr
 }
 
-export {randomCharactersId}
+function randomComicsId(length: number) {
+  let randomComicsIdx: number[] = []
+
+  if (!length) {
+    return randomComicsIdx
+  } 
+
+  const comicsCount = Math.min(3, length);
+
+    while (randomComicsIdx.length < comicsCount) {
+      const random = Math.floor(Math.random() * length);
+
+      if (!randomComicsIdx.includes(random)) {
+        randomComicsIdx.push(random);
+      }
+    }
+  return randomComicsIdx
+}
+
+export {randomCharactersId, randomComicsId}
