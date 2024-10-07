@@ -1,6 +1,6 @@
 import md5 from "md5";
-import { randomCharactersId } from "./randomCharactersId";
-import { IfilterObj } from './interface'
+import { randomCharactersId, randomComicsId } from "./randomCharactersId";
+import { IfilterObj, IDetailCharacters, IResult } from './interface'
 
 const ts = '1'
 const publickKey = '3e4a92df9169701b297c3638807c7b2e'
@@ -34,4 +34,44 @@ async function fetchFilteredCharacters(obj: IfilterObj, offset:number, limit:num
     return response.json();
 }
 
-export {fetchFiveRandomCharacters, fetchFilteredCharacters}
+async function fetchCharactersById(url: string) {
+    const response = await fetch(`${url}?ts=${ts}&apikey=${publickKey}&hash=${hash}`)
+        .then(resp => {
+            if (!resp.ok) {
+                throw new Error("Error");
+            }
+            return resp.json()
+        })
+        .then(async ({ data: {results} }) => {
+            const randomIdx = randomComicsId(results[0].comics.items.length)
+            const randomComics = await fetchRandomComics(randomIdx, results)
+            const charactersObj: IDetailCharacters = {
+                name: results[0].name,
+                description: results[0].description,
+                modified: results[0].modified,
+                thumbnail: results[0].thumbnail,
+                randomComics: randomComics
+            }
+            return charactersObj
+        })
+        .catch(err => console.log(err))
+    return response as IDetailCharacters
+}
+
+async function fetchRandomComics(randomIdx: number[], results: IResult[]) {
+    const randomComicsUrl = randomIdx.map(idx => results[0].comics.items[idx])
+
+    const arrayOfPromises = randomComicsUrl.map(async obj => {
+        const response = await fetch(`${obj.resourceURI}?ts=${ts}&apikey=${publickKey}&hash=${hash}`);
+        return response.json();
+    });
+
+    const comics = await Promise.all(arrayOfPromises);
+    const randomComics = comics.flatMap(({ data: { results } }) => {
+        return {thumbnail: results[0].thumbnail, title: results[0].title}
+    });
+
+    return randomComics
+}
+
+export {fetchFiveRandomCharacters, fetchFilteredCharacters, fetchCharactersById}
