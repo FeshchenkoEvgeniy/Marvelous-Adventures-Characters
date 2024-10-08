@@ -1,0 +1,112 @@
+.characters-modal__container{
+    background-color: #0C0B0B;
+    padding: 40px 20px;
+    width: 335px;
+    max-height: 95vh;
+    overflow-y: scroll;
+}
+.characters-modal__img{
+    width: 295px;
+    height: 387px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.characters-modal--bg{
+    padding: 32px 16px;
+    border-radius: 8px;
+    background-color: var(--secondBgColor);
+}
+.characters-modal__box{
+    margin-bottom: 32px;
+}
+.characters-modal__name,
+.characters-modal__title{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+}
+.characters-modal__modified{
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(250, 250, 250, 0.5);
+    margin: 4px 0px 16px;
+}
+.characters-modal__description{
+    font-size: 14px;
+    line-height: 18px;
+}
+.characters-modal__list{
+    margin-top: 16px;
+}
+.characters-modal__item:not(:last-child){
+    margin: 0px 0px 32px;
+}
+.characters-modal__comics-img{
+    width: 263px;
+    height: 263px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.characters-modal__comics-title{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+}
+
+@media screen and (min-width: 768px) {
+.characters-modal__container {
+    padding: 64px 32px;
+    width: 600px;
+}
+.characters-modal__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.characters-modal__img {
+    width: 332px;
+    height: 445px;
+}
+.characters-modal__name,
+.characters-modal__title {
+    font-size: 24px;
+}
+.characters-modal__modified {
+    margin: 0
+}
+.characters-modal__description {
+    font-size: 16px;
+}
+.characters-modal__list{
+    display: flex;
+}
+.characters-modal__comics-img {
+    min-width: 155px;
+    height: 200px;
+}
+.characters-modal__item:not(:last-child) {
+    margin: 0px 19px 0px 0px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+.characters-modal__container {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+.characters-modal--bg{
+    width: 588px;
+}
+.characters-modal__comics-img {
+    min-width: 174px;
+    height: 200px;
+}
+.characters-modal__item:not(:last-child) {
+    margin: 0px 16px 0px 0px;
+}
+}
