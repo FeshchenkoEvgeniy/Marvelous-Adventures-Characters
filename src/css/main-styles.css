@@ -7,6 +7,7 @@
 @import './components/main-characters-form.css';
 @import './components/main-characters.css';
 @import './components/notFound.css';
+@import './components/characters-modal.css';
 @import './components/footer.css';
 
 /* utils style */
