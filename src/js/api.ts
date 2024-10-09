@@ -63,9 +63,12 @@ async function fetchCharactersById(url: string) {
 
 async function fetchRandomComics(randomIdx: number[], results: IResult[]) {
     const randomComicsUrl = randomIdx.map(idx => results[0].comics.items[idx])
-    
+
     const arrayOfPromises = randomComicsUrl.map(async obj => {
-        const response = await fetch(`${obj.resourceURI}?ts=${ts}&apikey=${publickKey}&hash=${hash}`);
+        const arrUrl = obj.resourceURI.split('/');
+        const comicsId = arrUrl[arrUrl.length - 1];
+        
+        const response = await fetch(`${BASE_URL}/comics/${comicsId}?ts=${ts}&apikey=${publickKey}&hash=${hash}`);
         return response.json();
     });
 
