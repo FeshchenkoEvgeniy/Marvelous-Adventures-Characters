@@ -35,7 +35,10 @@ async function fetchFilteredCharacters(obj: IfilterObj, offset:number, limit:num
 }
 
 async function fetchCharactersById(url: string) {
-    const response = await fetch(`${url}?ts=${ts}&apikey=${publickKey}&hash=${hash}`)
+    const arrUrl = url.split('/');
+    const characterId = arrUrl[arrUrl.length - 1];
+    
+    const response = await fetch(`${BASE_URL}/characters/${characterId}?ts=${ts}&apikey=${publickKey}&hash=${hash}`)
         .then(resp => {
             if (!resp.ok) {
                 throw new Error("Error");
@@ -60,7 +63,7 @@ async function fetchCharactersById(url: string) {
 
 async function fetchRandomComics(randomIdx: number[], results: IResult[]) {
     const randomComicsUrl = randomIdx.map(idx => results[0].comics.items[idx])
-
+    
     const arrayOfPromises = randomComicsUrl.map(async obj => {
         const response = await fetch(`${obj.resourceURI}?ts=${ts}&apikey=${publickKey}&hash=${hash}`);
         return response.json();
