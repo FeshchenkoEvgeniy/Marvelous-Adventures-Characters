@@ -44,7 +44,7 @@
     color var(--mainTransitionTime) var(--mainTransition);
 }
 .social-list__link:hover,
-.social-list:focus{
+.social-list__link:focus{
     border: 1px solid #4B50AD;
     color: #4B50AD;
 }
