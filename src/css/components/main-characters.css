@@ -3,6 +3,13 @@
 }
 .characters__item{
     margin-bottom: 40px;
+    transition: transform var(--mainTransitionTime) var(--mainTransition),
+                color var(--mainTransitionTime) var(--mainTransition);
+}
+.characters__item:hover,
+.characters__item:focus{
+    transform: scale(1.1);
+    color: #4B50AD;
 }
 .characters__img{
     border-radius: 8px;
