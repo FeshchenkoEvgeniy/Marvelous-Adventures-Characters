@@ -1,6 +1,6 @@
 import md5 from "md5";
 import { randomCharactersId, randomComicsId } from "./randomCharactersId";
-import { IfilterObj, IDetailCharacters, IResult } from './interface'
+import { IfilterObj, IDetailCharacters, IResult, ICharacter, IDetailComics } from './interface'
 
 const ts = '1'
 const publickKey = '3e4a92df9169701b297c3638807c7b2e'
@@ -45,20 +45,24 @@ async function fetchCharactersById(url: string) {
             }
             return resp.json()
         })
-        .then(async ({ data: {results} }) => {
-            const randomIdx = randomComicsId(results[0].comics.items.length)
+        .then(async ({ data: { results } }) => {
+            const { name, comics, description, modified, thumbnail } = results[0]
+            
+            const randomIdx = randomComicsId(comics.items.length)
             const randomComics = await fetchRandomComics(randomIdx, results)
+
             const charactersObj: IDetailCharacters = {
-                name: results[0].name,
-                description: results[0].description,
-                modified: results[0].modified,
-                thumbnail: results[0].thumbnail,
-                randomComics: randomComics
+                name,
+                description,
+                modified,
+                thumbnail,
+                randomComics
             }
+
             return charactersObj
         })
         .catch(err => console.log(err))
-    return response as IDetailCharacters
+        return response as IDetailCharacters
 }
 
 async function fetchRandomComics(randomIdx: number[], results: IResult[]) {
@@ -74,10 +78,59 @@ async function fetchRandomComics(randomIdx: number[], results: IResult[]) {
 
     const comics = await Promise.all(arrayOfPromises);
     const randomComics = comics.flatMap(({ data: { results } }) => {
-        return {thumbnail: results[0].thumbnail, title: results[0].title}
+        return {thumbnail: results[0].thumbnail, title: results[0].title, comicsId: results[0].id}
     });
 
     return randomComics
 }
 
-export {fetchFiveRandomCharacters, fetchFilteredCharacters, fetchCharactersById}
+async function fetchComicsById(comicsId:string) {
+    const response = await fetch(`${BASE_URL}/comics/${comicsId}?ts=${ts}&apikey=${publickKey}&hash=${hash}`)
+    .then(resp => {
+    if (!resp.ok) {
+        throw new Error("Error");
+    }
+        return resp.json()
+    })
+    .then(async ({ data: { results } }) => {
+    const { title, prices, pageCount, format, description, modified, thumbnail, characters: { items } } = results[0]
+        
+    const characters = await fetchComicsCharactersById(items)    
+    const comicsObj = {
+        title,
+        prices,
+        pageCount,
+        format,
+        description,
+        modified,
+        thumbnail,
+        characters
+    }
+    return comicsObj
+    })
+    .catch(err => console.log(err))
+    return response as IDetailComics
+}
+
+async function fetchComicsCharactersById(characters: ICharacter[]) {
+    const arrayOfPromises = characters.map(async obj => {
+        const arrUrl = obj.resourceURI.split('/');
+        const charactersId = arrUrl[arrUrl.length - 1];
+        
+        const response = await fetch(`${BASE_URL}/characters/${charactersId}?ts=${ts}&apikey=${publickKey}&hash=${hash}`);
+        return response.json();
+    });
+
+    const charactersArr = await Promise.all(arrayOfPromises);
+    const allCharacters = charactersArr.flatMap(({ data: { results } }) => {
+        return {thumbnail: results[0].thumbnail, name: results[0].name}
+    });
+
+    const filteredCharacters = allCharacters.filter(({ thumbnail: { path } }) => {
+        return !path.endsWith('image_not_available') && !path.endsWith('4c002e0305708');
+    });
+
+    return filteredCharacters
+}
+
+export {fetchFiveRandomCharacters, fetchFilteredCharacters, fetchCharactersById, fetchComicsById}
