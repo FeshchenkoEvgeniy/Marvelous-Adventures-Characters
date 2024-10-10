@@ -28,6 +28,7 @@ interface IfilterObj {
 interface IRandomComics {
     thumbnail: IThumbnail,
     title: string,
+    comicsId: number,
 }
 
 interface IDetailCharacters {
@@ -49,4 +50,30 @@ interface IResult {
   };
 }
 
-export { ICharacters, IinitialState, IfilterObj, IDetailCharacters, IResult}
+interface ICharacter {
+    name: string;
+    resourceURI: string;
+}
+
+interface IComicsPrices {
+    type: string,
+    price: number
+}
+
+interface IComicsCharacters {
+    thumbnail: IThumbnail,
+    name: string,
+}
+
+interface IDetailComics {
+    description: string,
+    format: string,
+    modified: string,
+    pageCount: Number,
+    thumbnail: IThumbnail,
+    title: string,
+    prices: IComicsPrices[],
+    characters: IComicsCharacters[]
+}
+
+export { ICharacters, IinitialState, IfilterObj, IDetailCharacters, IResult, ICharacter, IDetailComics}
