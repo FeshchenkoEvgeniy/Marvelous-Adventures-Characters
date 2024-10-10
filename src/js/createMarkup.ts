@@ -1,4 +1,4 @@
-import {ICharacters, IDetailCharacters} from './interface'
+import {ICharacters, IDetailCharacters, IDetailComics} from './interface'
 
 function createMarkupForSwiperWrapper(arr: ICharacters[]): string {
     return arr.map(({name, thumbnail:{extension,path}}: ICharacters) => {
@@ -30,15 +30,19 @@ function createMarkupForMainCharactersList(arr: ICharacters[]): string {
     }).join('');
 }
 
+function formatDate(modified: string) {
+    const date = new Date(modified)
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
 function createMarkupForModalCharacters(data: IDetailCharacters): string {
     const { name, description, modified, thumbnail: { path, extension }, randomComics } = data
 
-    const date = new Date(modified)
-    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = date.toLocaleDateString('en-US', options);
+    const formattedDate = formatDate(modified)
 
-    const markup = randomComics.map(({thumbnail: {path, extension}, title}) => {
-        return `<li class='characters-modal__item'>
+    const markup = randomComics.map(({thumbnail: {path, extension}, title, comicsId}) => {
+        return `<li class='characters-modal__item' data-comicsId='${comicsId}'>
                 <img src="${path}.${extension}" alt="${title}" class='characters-modal__comics-img'>
                 <p class='characters-modal__comics-title'>${title}</p>
             </li>`    
@@ -56,7 +60,56 @@ function createMarkupForModalCharacters(data: IDetailCharacters): string {
     </div>
     <div>
         <p class='characters-modal__title'>List of comics</p>
-        <ul class='characters-modal__list'>
+        ${!randomComics.length ? `<div class="notFound__box" style="margin-top: 16px;">
+        <p class="notFound__text" style="text-align: center;">Not found..</p>
+      </div>` : `<ul class='characters-modal__list js-characters-modal__list'>
+            ${markup}
+        </ul>`} 
+    </div>
+    </div>
+    </div>    
+    `
+}
+
+function createMarkupForModalComics(data: IDetailComics): string {
+    const { title, description, modified, thumbnail: { path, extension }, characters, prices, format, pageCount } = data
+    
+    const formattedDate = formatDate(modified)
+    
+    const markup = characters.map(({thumbnail: {path, extension}, name}) => {
+        return `<li class='comics-modal__item'>
+                <img src="${path}.${extension}" alt="${name}" class='comics-modal__characters-img'>
+                <p class='comics-modal__characters-name'>${name}</p>
+            </li>`    
+        }).join('')
+    return `
+    <div class='comics-modal__container'>
+        <img src="${path}.${extension}" alt="${title}" class='comics-modal__img'>
+    <div class='comics-modal--bg'>
+    <div class='comics-modal__box'>
+        <div class='comics-modal__wrapper'> 
+        <p class='comics-modal__name'>${title}</p>
+        <p class='comics-modal__modified'>${formattedDate}</p>
+        </div>
+        <p class='comics-modal__description'>${description === null || !description.trim().length || description.includes('&nbsp;') ? str : description}</p>
+        <ul class='comics-modal__detail-list'>
+            <li class='comics-modal_detail-item'> 
+                <span class='comics-modal_detail-preTitle'>Format</span>
+                <p class='comics-modal_detail-text'>${format}</p>
+            </li>
+            <li class='comics-modal_detail-item'> 
+                <span class='comics-modal_detail-preTitle'>Pages</span>
+                <p class='comics-modal_detail-text'>${pageCount ? pageCount : 32}</p>
+            </li>
+            <li class='comics-modal_detail-item'> 
+                <span class='comics-modal_detail-preTitle'>Price</span>
+                <p class='comics-modal_detail-text'>$${!prices[0].price ? 2.99 : prices[0].price}</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p class='comics-modal__title'>Characters</p>
+        <ul class='comics-modal__list'>
             ${markup}
         </ul>
     </div>
@@ -65,5 +118,4 @@ function createMarkupForModalCharacters(data: IDetailCharacters): string {
     `
 }
 
-
-export {createMarkupForRandomCharacters, createMarkupForSwiperWrapper, createMarkupForMainCharactersList, createMarkupForModalCharacters}
+export {createMarkupForRandomCharacters, createMarkupForSwiperWrapper, createMarkupForMainCharactersList, createMarkupForModalCharacters, createMarkupForModalComics}
