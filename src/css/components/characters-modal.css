@@ -39,6 +39,14 @@
 .characters-modal__list{
     margin-top: 16px;
 }
+.characters-modal__item{
+    transition: transform var(--mainTransitionTime) var(--mainTransition),
+                color var(--mainTransitionTime) var(--mainTransition);
+}
+.characters-modal__item:hover{
+    transform: scale(1.1);
+    color: #4B50AD;
+}
 .characters-modal__item:not(:last-child){
     margin: 0px 0px 32px;
 }
