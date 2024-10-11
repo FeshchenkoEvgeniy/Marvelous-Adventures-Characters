@@ -8,7 +8,7 @@ function onSubmit(evt: Event) {
     input.value = input.value
 
 
-    window.location.href = `http://localhost:5173/characters.html?search=${encodeURIComponent(value)}`
+    window.location.href = `https://feshchenkoevgeniy.github.io/Marvelous-Adventures-Characters/characters.html?search=${encodeURIComponent(value)}`
 }
 
 pageHeadeForm.addEventListener('submit', onSubmit)
