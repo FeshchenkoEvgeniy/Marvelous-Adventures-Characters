@@ -112,6 +112,7 @@
     margin-top: 32px;
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 16px;
 }
 .comics-modal__item {
@@ -129,12 +130,15 @@
 
 @media screen and (min-width: 1440px) {
 .comics-modal__container {
-    width: 1000px;
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
+    width: 1016px;
+    max-height: 100vh;
     overflow-y: hidden;
 }
 .comics-modal--bg{
     width: 588px;
+    flex-grow: 1;
+    margin-left: 16px; 
 }
 }
