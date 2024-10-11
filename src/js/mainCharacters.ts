@@ -13,7 +13,12 @@ const charactersList = document.querySelector('.js-characters-list') as HTMLElem
 const loadMoreBtn = document.querySelector('.js-main-character__btn') as HTMLElement;
 const loader = document.querySelector('.js-loader') as HTMLElement;
 const body = document.querySelector('body') as HTMLElement
- const notFoundBox = document.querySelector('.notFound__box') as HTMLElement;
+const notFoundBox = document.querySelector('.notFound__box') as HTMLElement;
+const headerSearchInput = document.querySelector('.js-page-header__input') as HTMLInputElement
+
+const urlParams = new URLSearchParams(window.location.search);
+const searchQuery = urlParams.get('search');
+headerSearchInput.value = searchQuery ?? ''
 
 const { limit, offset, requiredCharacters, currentCategory } = getCategory();
 
@@ -27,7 +32,7 @@ const initialState: IinitialState = {
 
 const filterValue: IfilterObj = {
     comics: null,
-    name: null,
+    name: searchQuery,
     orderBy: null,
     date: null,     
 }
